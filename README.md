@@ -112,3 +112,13 @@ Running the example
                INNER JOIN people ON people_movies.personId=people."itemName()" 
             WHERE people.name='Emma Stone'
       for movie titles where Emma Stone was involved.
+   * Let's try to add some movie:
+
+            INSERT INTO movies VALUES ('00021', '[Action;Comedy]', 'My Studio', 'My novie', '5000')
+     Note here, that the second value will be stored as multivalued attribute. Format for working with multivalue attributes is semicolon separated values enclosed in brackets.
+   * Oh... Typo in movie title! Let's change that!
+   
+            UPDATE movies SET "title"='My movie' WHERE "itemName()"='00021'
+   * Want to delete movie from domain? No problem:
+   
+            DELETE FROM movies WHERE "itemName()"='00021'
