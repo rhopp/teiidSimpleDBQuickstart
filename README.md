@@ -33,6 +33,11 @@ Installing Teiid
 ------------------
 Project Teiid (version 8.6) is compatible with EAP 6.1 or WildFly 8.
 
+      As SimpleDB support will be in Teiid since version 8.7 (and 8.7 is not out yet)
+      you may need to compile teiid from source code as described in here:
+      https://community.jboss.org/wiki/TeiidEclipseDevEnvironmentSetUpAndBuildingRuntimeArtifacts
+
+
 1. Install application server (by uncompressing it to desired folder)
 2. Download latest Teiid Runtime from http://www.jboss.org/teiid/downloads and install it
   * Installing teiid is just matter of extracting into WildFly or EAP directory.
