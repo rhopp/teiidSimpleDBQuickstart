@@ -1,7 +1,5 @@
-teiidSimpleDBQuickstart
+Teiid SimpleDB Quickstart
 =======================
-Introduction
------------------------
 This is quickstart for SimpleDB connector and translator for Teiid - https://github.com/teiid/teiid
 -------------------
 <a id="systemrequirements"></a>
@@ -32,6 +30,7 @@ To run these quickstarts with the provided build scripts, you need the following
 Installing Teiid
 ------------------
 Project Teiid (version 8.6) is compatible with EAP 6.1 or WildFly 8.
+
 1. Prepare local environment:
     1. Install application server (by uncompressing it to desired folder)
     2. Download latest Teiid Runtime from http://www.jboss.org/teiid/downloads and install it
@@ -39,21 +38,20 @@ Project Teiid (version 8.6) is compatible with EAP 6.1 or WildFly 8.
     3. Add connection definition to resource adapter
         * Open $AS_ROOT_DIRECTORY/standalone/configuration/standalone-teiid.xml in your favourite text editor
         * Add this snippet under simpledb resource adapter to look like so (do not forget to fill your access key id & access key):
-        ```
-        <resource-adapter id="simpledb">
-            <module slot="main" id="org.jboss.teiid.resource-adapter.simpledb"/>
-            <connection-definitions>
-                <connection-definition class-name="org.teiid.resource.adapter.simpledb.SimpleDBManagedConnectionFactory" jndi-name="java:/simpledb" enabled="true" use-java-context="true" pool-name="fileDS">
-                    <config-property name="AccessKey">
-                        <YOUR_ACCESS_KEY_ID>
-                    </config-property>
-                    <config-property name="SecretAccessKey">
-                        <YOUR_SECRET_ACCESS_KEY>
-                    </config-property>
-                </connection-definition>
-            </connection-definitions>
-        </resource-adapter>
-        ```
+        
+                  <resource-adapter id="simpledb">
+                     <module slot="main" id="org.jboss.teiid.resource-adapter.simpledb"/>
+                     <connection-definitions>
+                         <connection-definition class-name="org.teiid.resource.adapter.simpledb.SimpleDBManagedConnectionFactory" jndi-name="java:/simpledb" enabled="true" use-java-context="true" pool-name="fileDS">
+                             <config-property name="AccessKey">
+                                 <YOUR_ACCESS_KEY_ID>
+                             </config-property>
+                             <config-property name="SecretAccessKey">
+                                 <YOUR_SECRET_ACCESS_KEY>
+                             </config-property>
+                         </connection-definition>
+                     </connection-definitions>
+                  </resource-adapter>
     4. Create virtual database file (VDB) and deploy it:
         * Create file 'my-vdb.vdb' with content:
         ```
